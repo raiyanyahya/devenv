@@ -1,5 +1,5 @@
 
-![Alt text](https://i.ibb.co/ZYXq4yn/devenv.png "devenv")
+![Alt text](https://i.ibb.co/zQ05SGX/devenv.png "devenv")
 # devenv
 A developer desktop in a docker image. It gets quite tricky to manage multiple projects on your on pc, projects tend to gather in the disk and it gets hard to manage system wide dependencies. This docker image comes pre-installed with the most common developer tools and can easily be destroyed and used fresh. You can also attach your local ssh config to access your git accounts. The image also has Gitpod's opensource vscode server and its super easy to mount your project directory and start programming directly in the browser.
 Feel free in adding improvements. Pull Requests are very much welcome :)
