@@ -39,6 +39,8 @@ USER devuser
 ENV TERM xterm
 WORKDIR /home/devuser
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+#Setup alias commands for starting and stopping a vscode server
 RUN echo 'alias upcode="nohup /openvscode-server-v1.63.0-linux-x64/server.sh --connection-token password123 & "' >> .zshrc
 RUN echo 'alias downcode="kill -9 \$(lsof -t -i:3000) "' >> .zshrc
 
