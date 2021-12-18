@@ -31,8 +31,8 @@ RUN wget https://github.com/gitpod-io/openvscode-server/releases/download/openvs
 RUN tar -xzf openvscode-server-v1.63.0-linux-x64.tar.gz
 RUN chmod +x openvscode-server-v1.63.0-linux-x64/server.sh
 
-# Add Docker, because docker
-RUN apt install docker.io -y && usermod -aG docker devuser && chmod 666 /var/run/docker.sock
+# Add Docker, because docker TODO
+#RUN apt install docker.io -y && usermod -aG docker devuser && chmod 666 /var/run/docker.sock
 
 RUN rm -rf /var/lib/apt/lists/* && \
 	apt-get clean && \
