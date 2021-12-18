@@ -24,6 +24,4 @@ jobs:
         
       - name: push to github packages
         if: contains(github.event.head_commit.message, '[release]') == true && github.event_name == 'push'
-        run: |
-             docker push $CONTAINER_IMAGE
-             docker push $CONTAINER_IMAGE_LATEST
+        run: docker push $CONTAINER_IMAGE_LATEST
