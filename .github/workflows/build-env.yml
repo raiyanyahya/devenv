@@ -3,7 +3,7 @@ name: build-push-image
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 env:
     CONTAINER_IMAGE: docker.pkg.github.com/${{github.repository}}/devenv:${{github.sha}}
