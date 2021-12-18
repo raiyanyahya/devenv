@@ -1,11 +1,14 @@
 from ubuntu:latest
 LABEL maintainer="Raiyan Yahya <raiyanyahyadeveloper@gmail.com>"
+COPY --from=golang /usr/local/go/ /usr/local/go/  
+ENV PATH="/usr/local/go/bin:${PATH}" 
+
 ENV DEBIAN_FRONTEND noninteractive
 #Update system
 RUN apt-get update
 
 # Installing build dependencies
-RUN apt-get install -y build-essential automake make cmake g++ wget git python3-pip curl zsh wget nano nodejs npm fonts-powerline
+RUN apt-get install -y build-essential automake make cmake sudo g++ wget git python3-pip curl zsh wget nano nodejs npm fonts-powerline
 
 
 # Prepare environment UTF-8
@@ -17,7 +20,7 @@ ENV LC_ALL en_US.UTF-8
 
 #Add a dev user and make zsh default
 RUN adduser --quiet --disabled-password --shell /bin/zsh --home /home/devuser --gecos "User" devuser && \
-    echo "devuser:<a href="mailto://p@ssword123">p@ssword123</a>" | chpasswd &&  usermod -aG sudo devuser
+    echo "devuser:<a href="mailto://password123">password123</a>" | chpasswd &&  usermod -aG sudo devuser
 
 RUN rm -rf /var/lib/apt/lists/*
 USER devuser
