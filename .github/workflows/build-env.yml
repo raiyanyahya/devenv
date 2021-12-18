@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: login
-        run: docker login -u $GITHUB_ACTOR -p ${{secrets.GITHUB_TOKEN}} docker.pkg.github.com
+        run: docker login -u $GITHUB_ACTOR -p ${{secrets.GITHUB_TOKEN}} ghcr.io
         
       - name: build and tag
         run: docker build -t $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .
