@@ -6,8 +6,8 @@ on:
       - master
   workflow_dispatch:
 env:
-    CONTAINER_IMAGE: docker.pkg.github.com/${{github.repository}}/devenv:${{github.sha}}
-    CONTAINER_IMAGE_LATEST: docker.pkg.github.com/${{github.repository}}/devenv:latest
+    CONTAINER_IMAGE: https://ghcr.io/${{github.repository}}/devenv:${{github.sha}}
+    CONTAINER_IMAGE_LATEST: https://ghcr.io/${{github.repository}}/devenv:latest
 
 jobs:
   build-tag-push:
