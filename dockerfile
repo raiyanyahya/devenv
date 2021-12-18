@@ -9,7 +9,7 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 ENV DEBIAN_FRONTEND noninteractive
 
 #Update system
-RUN apt update -y && apt install software-properties-common -y
+RUN apt update -y && apt install software-properties-common -y && apt-get update -y
 
 # Installing build dependencies
 RUN apt-get install -y build-essential automake make cmake sudo g++ wget git python3-pip curl zsh wget nano nodejs npm fonts-powerline lsof
