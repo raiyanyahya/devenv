@@ -23,8 +23,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 #Add a dev user and make zsh default
-RUN adduser --quiet  --shell /bin/zsh --home /home/devuser --gecos '' devuser  && \
-    echo "devuser:password123" | chpasswd &&  usermod -aG sudo devuser
+RUN useradd -m -s /bin/zsh --home /home/devuser -G sudo devuser && echo "devuser:devuser" | chpasswd
 
 #Install and setup Gitpod's vscode server
 RUN wget https://github.com/gitpod-io/openvscode-server/releases/download/openvscode-server-v1.63.0/openvscode-server-v1.63.0-linux-x64.tar.gz
